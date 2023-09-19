@@ -1,13 +1,20 @@
 
 
-temp = float(input("skriv inn temperatur: "))
-type = input("skriv F for farenheit og C for celsius: ")
+temperatur = str(input("skriv inn temperatur: "))
+temp = temperatur
+temperatur = temperatur.upper()
+temperatur = temperatur.replace("F","")
+temperatur = temperatur.replace("C","")
 
-if type == "F":
-    temp = (temp - 32) * 5/9
-    print(f"temperaturen i celsius = {temp:.1f}")
-elif type == "C":
-    temp = temp * (9/5) +32 
-    print(f"temperaturen i farenheit = {temp:.1f}")
+print(temperatur)
+temperatur = float(temperatur)
+
+print(temp)
+if temp.index("F") == 1:
+    temperatur = (temperatur - 32) * 5/9
+    print(f"temperaturen i celsius = {temperatur:.1f}")
+elif temp.index("C") == 1:
+    temperatur = temperatur * (9/5) +32 
+    print(f"temperaturen i farenheit = {temperatur:.1f}")
 else:
     print("du skrev ikke C eller F")
